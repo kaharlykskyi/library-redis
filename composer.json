@@ -1,8 +1,8 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "ipanardian/demo-crud-Yii2",
+    "description": "Demo CRUD Yii 2.0 Framework",
+    "keywords": ["yii2", "framework", "basic", "project", "crud"],
+    "homepage": "http://www.ipanardian.com/",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
