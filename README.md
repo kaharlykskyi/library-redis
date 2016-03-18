@@ -40,7 +40,7 @@ INSTALLATION
 ### Install from an Archive File
 
 Extract the archive file downloaded to
-a directory named `demo-crud-Yii2` that is directly under the Web root.
+a directory named `demo-crud-yii2` that is directly under the Web root.
 
 Set cookie validation key in `config/web.php` file to some random secret string:
 
@@ -54,7 +54,7 @@ Set cookie validation key in `config/web.php` file to some random secret string:
 You can then access the application through the following URL:
 
 ~~~
-http://localhost/demo-crud-Yii2/web/
+http://localhost/demo-crud-yii2/web/
 ~~~
 
 
@@ -67,14 +67,14 @@ You can then install this project template using the following command:
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
-php composer.phar create-project --prefer-dist --stability=dev ipanardian/demo-crud-Yii2 demo-crud-Yii2 
+php composer.phar create-project --prefer-dist --stability=dev ipanardian/demo-crud-yii2 demo-crud-yii2 
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `demo-crud-Yii2` is the directory
+Now you should be able to access the application through the following URL, assuming `demo-crud-yii2` is the directory
 directly under the Web root.
 
 ~~~
-http://localhost/demo-crud-Yii2/web/
+http://localhost/demo-crud-yii2/web/
 ~~~
 
 
@@ -88,12 +88,14 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2demo',
+    'dsn' => 'mysql:host=localhost;dbname=yii2_demo',
     'username' => 'root',
-    'password' => '1234',
+    'password' => '123456',
     'charset' => 'utf8',
 ];
 ```
+
+Import yii2_demo.sql
 
 **NOTES:**
 - Yii won't create the database for you, this has to be done manually before you can access it.
