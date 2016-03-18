@@ -39,7 +39,7 @@ INSTALLATION
 
 ### Install from an Archive File
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
+Extract the archive file downloaded to
 a directory named `demo-crud-Yii2` that is directly under the Web root.
 
 Set cookie validation key in `config/web.php` file to some random secret string:
