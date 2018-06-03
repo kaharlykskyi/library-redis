@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Book;
+use app\models\BookSearch;
 use Yii;
 use app\models\Customer;
 use app\models\CustomerSearch;
@@ -13,7 +15,7 @@ use yii\filters\AccessControl;
 /**
  * CustomerController implements the CRUD actions for Customer model.
  */
-class CustomerController extends Controller
+class BookController extends Controller
 {
     public function behaviors()
     {
@@ -44,7 +46,7 @@ class CustomerController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CustomerSearch();
+        $searchModel = new BookSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -72,7 +74,7 @@ class CustomerController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Customer();
+        $model = new Book();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -124,7 +126,7 @@ class CustomerController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Customer::findOne($id)) !== null) {
+        if (($model = Book::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

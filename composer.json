@@ -1,29 +1,24 @@
 {
-    "name": "ipanardian/demo-crud-yii2",
-    "description": "Demo CRUD Yii 2.0 Framework",
+    "name": "Yii2",
+    "description": "Crud",
     "keywords": ["yii2", "framework", "basic", "project", "crud"],
     "homepage": "http://www.ipanardian.com/",
     "type": "project",
     "license": "BSD-3-Clause",
-    "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
-    },
     "minimum-stability": "dev",
     "authors": [
         {
-            "name": "ipanardian",
-            "email": "ipan.software@gmail.com"
+            "name": "Misha Kaharlykskyi",
+            "email": "mishakagar@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "kartik-v/yii2-widget-datepicker": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

@@ -10,7 +10,7 @@ use app\models\Customer;
 /**
  * CustomerSearch represents the model behind the search form about `app\models\Customer`.
  */
-class CustomerSearch extends Customer
+class BookSearch extends Book
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class CustomerSearch extends Customer
     {
         return [
             [['id'], 'integer'],
-            [['full_name', 'email', 'address', 'registration_date', 'phone'], 'safe'],
+            [['title', 'author', 'year', 'rating'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class CustomerSearch extends Customer
      */
     public function search($params)
     {
-        $query = Customer::find();
+        $query = Book::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,15 +57,15 @@ class CustomerSearch extends Customer
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        //'title', 'author', 'year', 'rating'
         $query->andFilterWhere([
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['full_name' => $this->full_name])
-            ->andFilterWhere(['email' => $this->email])
-            ->andFilterWhere(['phone' => $this->phone])
-            ->andFilterWhere(['address' => $this->address]);
+        $query->andFilterWhere(['title' => $this->title])
+            ->andFilterWhere(['author' => $this->author])
+            ->andFilterWhere(['year' => $this->year])
+            ->andFilterWhere(['rating' => $this->rating]);
 
         return $dataProvider;
     }

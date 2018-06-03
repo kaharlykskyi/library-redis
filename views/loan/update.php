@@ -2,19 +2,19 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Customer */
 
-$this->title = 'Add Client';
-$this->params['breadcrumbs'][] = ['label' => 'Clients', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Update Loan: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Loans', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="customer-create">
+<div class="customer-update">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
+                <h2 class="text-center"><?= Html::encode($this->title) ?></h2>
                 <hr>
 
                 <?= $this->render('_form', [

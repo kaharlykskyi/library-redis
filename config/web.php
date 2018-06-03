@@ -10,6 +10,12 @@ $config = [
         'request' => [
             'cookieValidationKey' => '686%%^%^(*HIUBKY*&^%&^%&*(*NKH@808295576309%$%^$^$&*bbbkkk',
         ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -37,14 +43,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
     ],
     'params' => $params,
 ];

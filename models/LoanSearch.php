@@ -5,12 +5,11 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Customer;
 
 /**
  * CustomerSearch represents the model behind the search form about `app\models\Customer`.
  */
-class CustomerSearch extends Customer
+class LoanSearch extends Loan
 {
     /**
      * @inheritdoc
@@ -19,7 +18,7 @@ class CustomerSearch extends Customer
     {
         return [
             [['id'], 'integer'],
-            [['full_name', 'email', 'address', 'registration_date', 'phone'], 'safe'],
+            [['client_id', 'book_id', 'date', 'status'], 'safe'],
         ];
     }
 
@@ -41,7 +40,7 @@ class CustomerSearch extends Customer
      */
     public function search($params)
     {
-        $query = Customer::find();
+        $query = Loan::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -62,10 +61,10 @@ class CustomerSearch extends Customer
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['full_name' => $this->full_name])
-            ->andFilterWhere(['email' => $this->email])
-            ->andFilterWhere(['phone' => $this->phone])
-            ->andFilterWhere(['address' => $this->address]);
+        $query->andFilterWhere(['client_id' => $this->client_id])
+            ->andFilterWhere(['book_id' => $this->book_id])
+            ->andFilterWhere(['date' => $this->date])
+            ->andFilterWhere(['status' => $this->status]);
 
         return $dataProvider;
     }

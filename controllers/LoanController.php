@@ -2,6 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\Book;
+use app\models\BookSearch;
+use app\models\Loan;
+use app\models\LoanSearch;
 use Yii;
 use app\models\Customer;
 use app\models\CustomerSearch;
@@ -13,7 +17,7 @@ use yii\filters\AccessControl;
 /**
  * CustomerController implements the CRUD actions for Customer model.
  */
-class CustomerController extends Controller
+class LoanController extends Controller
 {
     public function behaviors()
     {
@@ -44,7 +48,7 @@ class CustomerController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CustomerSearch();
+        $searchModel = new LoanSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -60,9 +64,7 @@ class CustomerController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     /**
@@ -72,10 +74,10 @@ class CustomerController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Customer();
+        $model = new Loan();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -94,7 +96,7 @@ class CustomerController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -124,7 +126,7 @@ class CustomerController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Customer::findOne($id)) !== null) {
+        if (($model = Loan::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
